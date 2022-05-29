@@ -20,8 +20,7 @@
 |         | include pressure work in energy equation?        |
 |         | include kinetic energy in energy equation?       |
 |         | include diffusion as inlets?                     |
-| species | `/define/models/species/species-transport? y`    |
-|         | `mixture-template`                               |
+| species | `****`                                           |
 
 |         | Material                                           |
 | ------- | -------------------------------------------------- |
@@ -32,11 +31,11 @@
 
 |     | CellZone |
 | --- | -------- |
-|     | `***`    |
+|     | `****`   |
 
 |     | BoundaryCondition |
 | --- | ----------------- |
-|     | `***`             |
+|     | `****`            |
 
 |      | NamedExpressions                                              |
 | ---- | ------------------------------------------------------------- |
@@ -48,17 +47,15 @@
 
 ## Solution
 
-|                            | Monitors                                                                     |
-| -------------------------- | ---------------------------------------------------------------------------- |
-| Residual Check-Convergence | `/solve/monitors/residual/check-convergence? n n n n n n n n n n`            |
-| Convergence Conditions     | `/solve/convergence-conditions/conv-reports/add [ConvergenceConditionsName]` |
-|                            | `report-defs [ReposrtDefinitionsName]`                                       |
-|                            | `stop-criterion 1e-3`                                                        |
-|                            | `initial-values-to-ignore 500`                                               |
-|                            | `previous-values-to-consider 500`                                            |
-|                            | `print? y`                                                                   |
+|     | Methods |
+| --- | ------- |
+|     | `****`  |
 
-|     | ReportDefinitions                                                                   |
+|     | Controls |
+| --- | -------- |
+|     | `****`   |
+
+|     | Report Definitions                                                                  |
 | --- | ----------------------------------------------------------------------------------- |
 | add | `/solve/report-definitions/add [ReportDefinitionName] [RD(report-definition-type)]` |
 |     | `field [RD(field)]`                                                                 |
@@ -66,11 +63,60 @@
 |     | `report-type [RD(report-type)]`                                                     |
 |     | `surface-names [SurfaceName]`                                                       |
 
-|         | ExecuteCommands                                                                          |
+|                       | Monitors                                                                     |
+| --------------------- | ---------------------------------------------------------------------------- |
+| Residual              | `/solve/monitors/residual/check-convergence? n n n n n n n n n n`            |
+|                       | 1 continuity residuals                                                       |
+|                       | 2 x-velocity residuals                                                       |
+|                       | 3 y-velocity residuals                                                       |
+|                       | 4 z-velocity residuals                                                       |
+|                       | 5 energy residuals                                                           |
+|                       | 6 k residuals                                                                |
+|                       | 7 omega residuals                                                            |
+|                       | 8 species-0                                                                  |
+|                       | 9 species-1...                                                               |
+| ConvergenceConditions | `/solve/convergence-conditions/conv-reports/add [ConvergenceConditionsName]` |
+|                       | `report-defs [ReposrtDefinitionsName]`                                       |
+|                       | `stop-criterion 1e-3`                                                        |
+|                       | `initial-values-to-ignore 500`                                               |
+|                       | `previous-values-to-consider 500`                                            |
+|                       | `print? y`                                                                   |
+
+|                      | Initialization                             |
+| -------------------- | ------------------------------------------ |
+| InitializationMethod | `/solve/initialize/[InitializationMethod]` |
+|                      | initialize-flow                            |
+|                      | hyb-initialization                         |
+|                      | fmg-initialization                         |
+| InitialValues        | `/solve/initialize/set-defaults`           |
+|                      | `x-velocity 0.0`                           |
+|                      | `y-velocity 0.0`                           |
+|                      | `z-velocity 0.0`                           |
+|                      | `pressure 0.0`                             |
+|                      | `k 0.0`                                    |
+|                      | `omega 0.0`                                |
+|                      | `temperature 0.0`                          |
+|                      | `species-0 0.0`                            |
+|                      | `species-1 0.0`                            |
+
+|         | Execute Commands                                                                         |
 | ------- | ---------------------------------------------------------------------------------------- |
 | add     | `/solve/execute-commands/add-edit [ExecuteCommandsName] 300 iteration "ExecuteCommands"` |
 | disable | `/solve/execute-commands/disable [ExecuteCommandsName]`                                  |
 | enable  | `/solve/execute-commands/enable [ExecuteCommandsName]`                                   |
+
+|                   | Run Caluclation                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| PseudoTimeSetting | `/solve/set/pseudo-time-method/global-time-step-settings y 1 0.01` |
+|                   | activate automatic time step size calculation?                     |
+|                   | length scale calculation methods options:                          |
+|                   | 0 - aggressive                                                     |
+|                   | 1 - conservative                                                   |
+|                   | 2 - user-specified                                                 |
+|                   | length scale calculation method                                    |
+|                   | auto time step size scaling factor                                 |
+|                   | `/solve/set/pseudo-time-method/verbosity 0`                        |
+|                   | Set verbosity level: (0 1 2)                                       |
 
 </br>
 </br>
