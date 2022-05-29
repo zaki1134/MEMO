@@ -66,9 +66,11 @@
 |     | `report-type [RD(report-type)]`                                                     |
 |     | `surface-names [SurfaceName]`                                                       |
 
-|     | ExecuteCommands                                                                          |
-| --- | ---------------------------------------------------------------------------------------- |
-| add | `/solve/execute-commands/add-edit [ExecuteCommandsName] 300 iteration "ExecuteCommands"` |
+|         | ExecuteCommands                                                                          |
+| ------- | ---------------------------------------------------------------------------------------- |
+| add     | `/solve/execute-commands/add-edit [ExecuteCommandsName] 300 iteration "ExecuteCommands"` |
+| disable | `/solve/execute-commands/disable [ExecuteCommandsName]`                                  |
+| enable  | `/solve/execute-commands/enable [ExecuteCommandsName]`                                   |
 
 </br>
 </br>
