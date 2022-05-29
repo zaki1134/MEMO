@@ -1,0 +1,42 @@
+# report-definition-type
+
+|                        |
+| ---------------------- |
+| drag                   |
+| flux-heattransfer      |
+| flux-massflow          |
+| flux-radheattransfer   |
+| flux-viscouswork       |
+| force                  |
+| lift                   |
+| moment                 |
+| single-val-expression  |
+| surface-area           |
+| surface-areaavg        |
+| surface-areawtui       |
+| surface-facetavg       |
+| surface-facetmax       |
+| surface-facetmin       |
+| surface-flowrate       |
+| surface-integral       |
+| surface-massavg        |
+| surface-massflowrate   |
+| surface-masswtui       |
+| surface-stddev         |
+| surface-sum            |
+| surface-vectbasedflux  |
+| surface-vectflux       |
+| surface-vectwtavg      |
+| surface-vertexavg      |
+| surface-vertexmax      |
+| surface-vertexmin      |
+| surface-volumeflowrate |
+| volume-average         |
+| volume-integral        |
+| volume-mass            |
+| volume-massavg         |
+| volume-massintegral    |
+| volume-max             |
+| volume-min             |
+| volume-sum             |
+| volume-zonevol         |
