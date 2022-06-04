@@ -1,7 +1,5 @@
 # report-type
 
-|                        |
-| ---------------------- |
 | surface-area           |
 | surface-areaavg        |
 | surface-vectbasedflux  |

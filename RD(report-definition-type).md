@@ -1,7 +1,5 @@
 # report-definition-type
 
-|                        |
-| ---------------------- |
 | drag                   |
 | flux-heattransfer      |
 | flux-massflow          |

@@ -1,7 +1,5 @@
 # report-type
 
-|                                |
-| ------------------------------ |
 | area                           |
 | area-weighted-avg              |
 | facet-avg                      |

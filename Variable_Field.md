@@ -1,7 +1,5 @@
 # Variable & Field
 
-|                                |
-| ------------------------------ |
 | abs-angular-coordinate         |
 | absolute-pressure              |
 | angular-coordinate             |
